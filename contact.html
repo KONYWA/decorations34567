@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Decorations of Doors, Windows, and Pillars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('contact-bg.jpg'); /* Set your background image here */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(95, 75, 58, 0.9);
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1rem;
+        }
+
+        /* Menu Button (Hamburger) */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #6e4e31;
+            border-radius: 5px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-top: 40px;
+        }
+
+        .contact-header {
+            margin-bottom: 20px;
+        }
+
+        .contact-header h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-header p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: #5f4b3a;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #6e4e31;
+        }
+
+        footer {
+            background-color: #5f4b3a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-left: 0;
+                font-size: 1.2rem;
+            }
+
+            .hamburger-menu {
+                display: flex;
+                margin-left: auto;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav a {
+                padding: 12px;
+                font-size: 1rem;
+                text-align: left;
+                width: 100%;
+                border-top: 1px solid #d3d3d3;
+            }
+
+            .contact-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .contact-header p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Toggle menu visibility */
+        .menu-active nav {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoo.jpg" alt="Logo">
+            <span>Decorations of Doors, Windows, and Pillars</span>
+        </div>
+
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span>MENU</span>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('sw')">Swahili</button>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <div class="contact-header">
+            <h2 id="contact-title">Get in Touch</h2>
+            <p id="contact-description">We would love to hear from you! Whether you have questions, suggestions, or just want to say hello, feel free to reach out to us.</p>
+        </div>
+
+        <form class="contact-form" action="submit-form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Decorations of Doors, Windows, and Pillars. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Language switching function
+        function switchLanguage(language) {
+            const texts = {
+                en: {
+                    'contact-title': 'Get in Touch',
+                    'contact-description': 'We would love to hear from you! Whether you have questions, suggestions, or just want to say hello, feel free to reach out to us.'
+                },
+                sw: {
+                    'contact-title': 'Wasiliana Nasi',
+                    'contact-description': 'Tunapenda kusikia kutoka kwako! Iwe una maswali, mapendekezo, au unataka kusema salamu, tafadhali wasiliana nasi.'
+                }
+            };
+            document.getElementById('contact-title').textContent = texts[language]['contact-title'];
+            document.getElementById('contact-description').textContent = texts[language]['contact-description'];
+        }
+
+        // Language detection
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('sw')) {
+                switchLanguage('sw');
+            } else {
+                switchLanguage('en');
+            }
+        });
+
+        // Toggle menu visibility
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+    </script>
+</body>
+</html>

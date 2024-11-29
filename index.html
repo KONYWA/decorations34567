@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Decorations of Doors, Windows, and Pillars</title>
+    <style>
+        /* Your existing CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('GOOD.jpg'); /* Set your background image here */
+            background-size: cover;
+            background-position: center;
+            color: #333; /* Dark color for the text to make it more readable */
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(95, 75, 58, 0.9); /* Slightly darker background */
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        .logo {
+            font-size: 1.4rem; /* Slightly larger font size for the header */
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 55px; /* Slightly bigger logo */
+            height: 55px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1rem; /* Slightly larger text for better visibility */
+        }
+
+        /* Menu Button (Hamburger) */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .hamburger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+        }
+
+        .hamburger-menu span {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: #fff; /* White color for better contrast */
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1rem; /* Larger font size for navigation links */
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #6e4e31; /* Light wood shade for hover effect */
+            border-radius: 5px;
+        }
+
+        /* Language Selector Container */
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #8b6f47; /* Light wood shade */
+        }
+
+        .language-selector button {
+            background-color: #5f4b3a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .language-selector button:hover {
+            background-color: #6e4e31;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-size: cover;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            background-position: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero button {
+            background-color: #8b6f47;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #6e4e31;
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .intro button {
+            background-color: #8b6f47;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .intro button:hover {
+            background-color: #6e4e31;
+        }
+
+        footer {
+            background-color: #5f4b3a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        select {
+            padding: 5px;
+            background-color: #5f4b3a;
+            color: white;
+            border: 1px solid #4e3629;
+            cursor: pointer;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-left: 0;
+                font-size: 1.2rem;
+            }
+
+            .hamburger-menu {
+                display: flex;
+                margin-left: auto;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav a {
+                padding: 12px;
+                font-size: 1rem;
+                text-align: left;
+                width: 100%;
+                border-top: 1px solid #d3d3d3;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .intro h2 {
+                font-size: 2rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .intro button {
+                font-size: 1rem;
+                padding: 10px 25px;
+            }
+        }
+
+        /* Toggle menu visibility */
+        .menu-active nav {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoo.jpg" alt="Logo">
+            <span>Decorations of Doors, Windows, and Pillars</span>
+        </div>
+
+        <!-- Hamburger Menu for Mobile (inside the header) -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span>MENU</span>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Navbar inside the header (aligned to the right) -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Language Selector Below Header -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('sw')">Swahili</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1 id="hero-title">Transform Your Home with Beautiful Decorations</h1>
+            <p id="hero-description">Explore stunning designs for doors, windows, and pillars to enhance your living spaces.</p>
+            <button onclick="location.href='services.html'">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <h2 id="intro-title">Why Choose Our Decorations?</h2>
+        <p id="intro-description">Our expertly designed decorations add elegance to your doors, windows, and pillars, making your home stand out with modern style.</p>
+        <button onclick="location.href='about.html'">Learn More</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Decorations of Doors, Windows, and Pillars. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Language switching function
+        function switchLanguage(language) {
+            const texts = {
+                en: {
+                    'hero-title': 'Transform Your Home with Beautiful Decorations',
+                    'hero-description': 'Explore stunning designs for doors, windows, and pillars to enhance your living spaces.',
+                    'intro-title': 'Why Choose Our Decorations?',
+                    'intro-description': 'Our expertly designed decorations add elegance to your doors, windows, and pillars, making your home stand out with modern style.'
+                },
+                sw: {
+                    'hero-title': 'Boresha Nyumba Yako na Mapambo Mazuri',
+                    'hero-description': 'Gundua miundo ya kuvutia ya milango, madirisha, na nguzo kuboresha maeneo yako ya kuishi.',
+                    'intro-title': 'Kwa Nini Uchague Mapambo Yetu?',
+                    'intro-description': 'Mapambo yetu yaliyoundwa na wataalamu huongeza uzuri kwa milango, madirisha, na nguzo zako, na kufanya nyumba yako kung‟ara kwa mtindo wa kisasa.'
+                }
+            };
+            document.getElementById('hero-title').textContent = texts[language]['hero-title'];
+            document.getElementById('hero-description').textContent = texts[language]['hero-description'];
+            document.getElementById('intro-title').textContent = texts[language]['intro-title'];
+            document.getElementById('intro-description').textContent = texts[language]['intro-description'];
+        }
+
+        // Language detection
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('sw')) {
+                switchLanguage('sw');
+            } else {
+                switchLanguage('en');
+            }
+        });
+
+        // Toggle menu visibility
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Decorations of Doors, Windows, and Pillars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('services-bg.jpg'); /* Set your background image here */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(95, 75, 58, 0.9);
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1rem;
+        }
+
+        /* Menu Button (Hamburger) */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #6e4e31;
+            border-radius: 5px;
+        }
+
+        /* Language Selector Container */
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #8b6f47; /* Light wood shade */
+        }
+
+        .language-selector button {
+            background-color: #5f4b3a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .language-selector button:hover {
+            background-color: #6e4e31;
+        }
+
+        /* Services Section */
+        .services-container {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-top: 40px;
+        }
+
+        .services-header {
+            margin-bottom: 20px;
+        }
+
+        .services-header h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .services-header p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-item p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #5f4b3a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-left: 0;
+                font-size: 1.2rem;
+            }
+
+            .hamburger-menu {
+                display: flex;
+                margin-left: auto;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav a {
+                padding: 12px;
+                font-size: 1rem;
+                text-align: left;
+                width: 100%;
+                border-top: 1px solid #d3d3d3;
+            }
+
+            .services-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-header p {
+                font-size: 1rem;
+            }
+
+            .services-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-item {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Toggle menu visibility */
+        .menu-active nav {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoo.jpg" alt="Logo">
+            <span>Decorations of Doors, Windows, and Pillars</span>
+        </div>
+
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span>MENU</span>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('sw')">Swahili</button>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-container">
+        <div class="services-header">
+            <h2 id="services-title">Our Services</h2>
+            <p id="services-description">Explore the wide range of decoration services we offer to elevate your living spaces.</p>
+        </div>
+        <div class="services-list">
+            <div class="service-item">
+                <img src="GOOD.jpg" alt="Door Decoration">
+                <h3 id="door-title">Door Decorations</h3>
+                <p id="door-description">Transform your entrance with our unique and stylish door decorations. We offer custom designs that blend elegance with functionality, giving your home a lasting impression from the outside.</p>
+            </div>
+            <div class="service-item">
+                <img src="GOOD.jpg" alt="Window Design">
+                <h3 id="window-title">Window Designs</h3>
+                <p id="window-description">Enhance your home’s aesthetic with our modern and elegant window designs. Our designs allow you to enjoy more natural light while maintaining privacy, offering both beauty and functionality.</p>
+            </div>
+            <div class="service-item">
+                <img src="GOOD.jpg" alt="Pillar Finishing">
+                <h3 id="pillar-title">Pillar Finishing</h3>
+                <p id="pillar-description">Our specialized pillar finishing services provide an elegant and polished look to any space. We offer a variety of finishes to match your design preferences, giving your pillars a refined and classy look.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Decorations of Doors, Windows, and Pillars. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Language switching function
+        function switchLanguage(language) {
+            const texts = {
+                en: {
+                    'services-title': 'Our Services',
+                    'services-description': 'Explore the wide range of decoration services we offer to elevate your living spaces.',
+                    'door-title': 'Door Decorations',
+                    'door-description': 'Transform your entrance with our unique and stylish door decorations. We offer custom designs that blend elegance with functionality, giving your home a lasting impression from the outside.',
+                    'window-title': 'Window Designs',
+                    'window-description': 'Enhance your home’s aesthetic with our modern and elegant window designs. Our designs allow you to enjoy more natural light while maintaining privacy, offering both beauty and functionality.',
+                    'pillar-title': 'Pillar Finishing',
+                    'pillar-description': 'Our specialized pillar finishing services provide an elegant and polished look to any space. We offer a variety of finishes to match your design preferences, giving your pillars a refined and classy look.'
+                },
+                sw: {
+                    'services-title': 'Huduma Zetu',
+                    'services-description': 'Chunguza huduma mbalimbali za mapambo tunazotoa ili kuboresha maeneo yako ya kuishi.',
+                    'door-title': 'Mapambo ya Milango',
+                    'door-description': 'Badilisha mlango wako kwa mapambo yetu ya kipekee na ya kisasa. Tunatoa miundo ya kibinafsi inayochanganya uzuri na ufanisi, ikitoa nyumba yako hisia ya kudumu kutoka nje.',
+                    'window-title': 'Miundo ya Dirisha',
+                    'window-description': 'Boresha mandhari ya nyumba yako kwa miundo yetu ya kisasa na ya kifahari ya madirisha. Miundo yetu inakuwezesha kufurahia mwangaza wa asili zaidi huku ukihifadhi faragha, ikitoa uzuri na ufanisi.',
+                    'pillar-title': 'Mamalizo ya Nguzo',
+                    'pillar-description': 'Huduma zetu maalum za kumaliza nguzo hutoa muonekano wa kifahari na ulio kamilifu kwa kila nafasi. Tunatoa aina mbalimbali za kumaliza zinazolingana na mapendeleo yako ya muundo, ikitoa nguzo zako muonekano wa heshima na wa kipekee.'
+                }
+            };
+
+            document.getElementById('services-title').textContent = texts[language]['services-title'];
+            document.getElementById('services-description').textContent = texts[language]['services-description'];
+            document.getElementById('door-title').textContent = texts[language]['door-title'];
+            document.getElementById('door-description').textContent = texts[language]['door-description'];
+            document.getElementById('window-title').textContent = texts[language]['window-title'];
+            document.getElementById('window-description').textContent = texts[language]['window-description'];
+            document.getElementById('pillar-title').textContent = texts[language]['pillar-title'];
+            document.getElementById('pillar-description').textContent = texts[language]['pillar-description'];
+        }
+
+        // Language detection
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('sw')) {
+                switchLanguage('sw');
+            } else {
+                switchLanguage('en');
+            }
+        });
+
+        // Toggle menu visibility
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+    </script>
+</body>
+</html>

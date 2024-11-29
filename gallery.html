@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Decorations of Doors, Windows, and Pillars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('gallery-bg.jpg'); /* Set your background image here */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(95, 75, 58, 0.9);
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1rem;
+        }
+
+        /* Menu Button (Hamburger) */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #6e4e31;
+            border-radius: 5px;
+        }
+
+        /* Language Selector Container */
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #8b6f47; /* Light wood shade */
+        }
+
+        .language-selector button {
+            background-color: #5f4b3a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .language-selector button:hover {
+            background-color: #6e4e31;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-top: 40px;
+        }
+
+        .gallery-header {
+            margin-bottom: 20px;
+        }
+
+        .gallery-header h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-header p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: #5f4b3a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-left: 0;
+                font-size: 1.2rem;
+            }
+
+            .hamburger-menu {
+                display: flex;
+                margin-left: auto;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            nav a {
+                padding: 12px;
+                font-size: 1rem;
+                text-align: left;
+                width: 100%;
+                border-top: 1px solid #d3d3d3;
+            }
+
+            .gallery-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-header p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Toggle menu visibility */
+        .menu-active nav {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logoo.jpg" alt="Logo">
+            <span>Decorations of Doors, Windows, and Pillars</span>
+        </div>
+
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <span>MENU</span>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('sw')">Swahili</button>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-container">
+        <div class="gallery-header">
+            <h2 id="gallery-title">Our Exclusive Gallery</h2>
+            <p id="gallery-description">Discover the beauty and elegance we bring to every home. Your dream design awaits!</p>
+        </div>
+        <div class="gallery">
+            <img src="GOOD.jpg" alt="Elegant Door Decoration">
+            <img src="GOOD.jpg" alt="Modern Window Design">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+            <img src="GOOD.jpg" alt="Stylish Pillar Finish">
+
+            <!-- Add more images here -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Decorations of Doors, Windows, and Pillars. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Language switching function
+        function switchLanguage(language) {
+            const texts = {
+                en: {
+                    'gallery-title': 'Our Exclusive Gallery',
+                    'gallery-description': 'Discover the beauty and elegance we bring to every home. Your dream design awaits!'
+                },
+                sw: {
+                    'gallery-title': 'Matunzio Yetu Ya Kipekee',
+                    'gallery-description': 'Gundua uzuri na ustadi tunaouleta kwenye kila nyumba. Ubunifu wa ndoto yako unakusubiri!'
+                }
+            };
+            document.getElementById('gallery-title').textContent = texts[language]['gallery-title'];
+            document.getElementById('gallery-description').textContent = texts[language]['gallery-description'];
+        }
+
+        // Language detection
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('sw')) {
+                switchLanguage('sw');
+            } else {
+                switchLanguage('en');
+            }
+        });
+
+        // Toggle menu visibility
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+    </script>
+</body>
+</html>
